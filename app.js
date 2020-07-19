@@ -20,7 +20,8 @@ let mongoose = require("mongoose");
 
 
 //mongodb atlas server coud mongo db
-let mongoDB ="mongodb+srv://david:Nissan2021@cluster0-mbrlq.mongodb.net/local_library?retryWrites=true&w=majority";
+let dev_db_url ="mongodb+srv://david:Nissan2021@cluster0-mbrlq.mongodb.net/local_library?retryWrites=true&w=majority";
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 mongoose.connect(mongoDB,{useNewUrlParser: true});
 
